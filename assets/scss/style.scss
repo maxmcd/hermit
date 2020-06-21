@@ -768,12 +768,24 @@ a.footnote-ref {
   hr.post-end {
     width: 40%;
   }
+
 }
 
 @media (min-width: 960px) {
   .site-main {
     margin-top: 6em;
   }
+
+  #toc {
+    display: block;
+  }
+
+  #toc {
+    top: 13em;
+    margin-left: 370px;
+    max-width: 220px;
+  }
+
 }
 
 @media (min-width: 1300px) {
@@ -781,8 +793,7 @@ a.footnote-ref {
     margin-top: 8em;
   }
 
-  .desktop-only,
-  #toc.show-toc {
+  .desktop-only {
     display: block;
   }
 
@@ -813,11 +824,6 @@ a.footnote-ref {
     width: 30%;
   }
 
-  #toc {
-    top: 13em;
-    margin-left: 370px;
-    max-width: 220px;
-  }
 }
 
 @media (min-width: 1800px) {
