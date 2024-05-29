@@ -1,15 +1,71 @@
 {{ define "head" }}
-	{{ if .Site.Params.bgImg -}}
+	<style>
+		a {
+			color: black;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: #999;
+		}
+
+	</style>
+	<!-- {{ if .Site.Params.bgImg -}}
 	<style>.bg-img {background-image: url('{{.Site.Params.bgImg}}');}</style>
+
 	{{- else if .Site.Params.images -}}
 		{{- range first 1 .Site.Params.images -}}
 		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
 		{{- end -}}
-	{{- end -}}
+	{{- end -}} -->
 {{ end }}
 
 {{ define "main" }}
-	{{- if (or .Site.Params.images .Site.Params.bgImg) }}
+	<div style="color: black; opacity: 0.8;  background-color: white; width: calc(100% - 50px);
+	max-width: 500px; margin: 100px auto; padding: 20px; border-radius: 5px;
+	box-shadow: blue 0px 0px 0px 2px inset,
+	rgb(255, 255, 255) 10px -10px 0px -3px,
+	rgb(31, 193, 27) 10px -10px,
+	rgb(255, 255, 255) 20px -20px 0px -3px,
+	rgb(255, 217, 19) 20px -20px,
+	rgb(255, 255, 255) 30px -30px 0px -3px,
+	rgb(255, 156, 85) 30px -30px,
+	rgb(255, 255, 255) 40px -40px 0px -3px,
+	rgb(255, 85, 85) 40px -40px;
+
+	box-shadow: -5px 5px 0 0 rgb(0, 0, 255, 0.6),
+	 -10px 10px 0 0 rgba(31, 193, 27,0.6),
+	 -15px 15px 0 0 rgba(55, 217, 19,0.4),
+	 -20px 20px 0 0 rgba(255, 156, 85,0.2),
+	 -25px 25px 0 0 rgba(255, 85, 85,0.1);
+	">
+		<h3>Max McDonnell</h3>
+		<ul>
+			<li><a href="/posts/">blog</a></li>
+			<li><a href="https://www.val.town/u/maxm">val.town</a></li>
+			<li><a href="https://x.com/mxmcd">twitter</a></li>
+			<li><a href="https://github.com/maxmcd">github</a></li>
+		</ul>
+
+		<h3>Recent Posts</h3>
+		<ul>
+			{{ range $i, $page := .Site.RegularPages }}
+			{{if lt $i 3}}<li>{{ $page.Date.Format "2006-01-02" }} - <a href="{{$page.Permalink}}">{{$page.Title}}</a></li>{{end}}
+			{{ end }}
+		</ul>
+
+		<h3>Projects</h3>
+		<ul>
+			<li>2024-05-27 - <a href="https://www.val.town/v/maxm/staticChess">Static Chess</a> - Plain, brutalist, no bloat chess. Every page is only html and css. </li>
+			<li>2021-12-09 - <a href="https://github.com/maxmcd/bramble">Bramble</a> - A Nix alternative in Go with Starlark. Not working software, but it was super fun to implement Nix features and try out a few new patterns.</li>
+			<li>2018-11-11 - <a href="https://github.com/maxmcd/webtty">WebTTY</a> - Share a terminal session over WebRTC.</li>
+		</ul>
+
+
+	</div>
+	<div style="z-index: -1; text-align: center; top: 0; position: fixed; margin: 60px auto; width: 100%; opacity: 70%;">
+		<img style="border-radius: 3px;" src="https://imagedelivery.net/iHX6Ovru0O7AjmyT5yZRoA/63fbd81d-7844-4ce8-7914-b0cc1083a200/public"/>
+	</div>
+	<!-- {{- if (or .Site.Params.images .Site.Params.bgImg) }}
 	<div class="bg-img"></div>
 	{{- end }}
 	<div id="spotlight" class="animated fadeIn">
@@ -32,5 +88,5 @@
 				<a href="{{ "posts/index.xml" | absLangURL }}" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 			</p>
 		</div>
-	</div>
+	</div> -->
 {{ end }}
