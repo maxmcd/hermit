@@ -22,9 +22,13 @@ h1 {
   font-weight: 300;
 }
 
+ul, li {
+  line-height: 1.6;
+}
+
 html {
   background: $light-grey;
-  line-height: 1.6;
+  line-height: 1.3;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
