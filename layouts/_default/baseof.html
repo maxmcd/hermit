@@ -15,6 +15,9 @@
 	{{ range .AlternativeOutputFormats -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
 	{{ end -}}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify | fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
 	{{- block "head" . -}}{{- end }}

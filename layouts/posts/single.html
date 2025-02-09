@@ -19,7 +19,7 @@
 	<main class="site-main section-inner animated fadeIn faster">
 		<article class="thin">
 			<header class="post-header">
-				<div class="post-meta"><span>{{ .Date.Format .Site.Params.dateform }}</span> - {{ .Site.Author.name }}</div>
+				<div class="post-meta"><span>{{ .Date.Format .Site.Params.dateform }}</span> - {{ .Site.Params.author }}</div>
 				<h1>{{ .Title }}</h1>
 			</header>
 			<div class="content">
@@ -65,9 +65,6 @@
 				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;{{ i18n "older" }}</span><br><span>{{ .Title }}</span>
 			</a>
 			{{- end }}
-		</div>
-		<div id="comments" class="thin">
-		{{- partial "comments.html" . -}}
 		</div>
 	</main>
 {{ end }}

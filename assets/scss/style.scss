@@ -18,11 +18,15 @@
   }
 }
 
+h1 {
+  font-weight: 500;
+}
+
 html {
   background: $light-grey;
   line-height: 1.6;
-  letter-spacing: .06em;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 body,
@@ -32,12 +36,14 @@ select,
 textarea {
   color: $text;
   font-family: $fonts;
+  font-weight: 300;
 }
 
 pre,
 code,
 pre tt {
   font-family: $code-fonts;
+  font-size: 0.9em;
 }
 
 pre {
@@ -61,10 +67,10 @@ pre {
 
 code {
   color: #eee;
-  background: $highlight-grey;
+  background: #7d828a30;
   border-radius: 3px;
   padding: 0 3px;
-  margin: 0 4px;
+  margin: 0 0px;
   word-wrap: break-word;
   letter-spacing: normal;
 }
@@ -223,14 +229,7 @@ table {
 // Header & Footer
 //
 #site-header {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  width: 100%;
   box-sizing: border-box;
-  box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
-  background-color: $dark-grey;
-  animation-duration: .3s;
 }
 
 .hdr-wrapper {
@@ -826,44 +825,6 @@ a.footnote-ref {
 
 }
 
-@media (min-width: 1800px) {
-  .site-main {
-    margin-top: 10em;
-  }
-
-  .section-inner {
-    max-width: 1600px;
-  }
-
-  .thin {
-    max-width: 960px;
-  }
-
-  figure.left {
-    max-width: 75%;
-    margin-left: -320px;
-  }
-
-  figure.right {
-    max-width: 75%;
-    margin-right: -320px;
-  }
-
-  figure.big {
-    width: 1600px;
-    margin-left: -320px;
-  }
-
-  hr.post-end {
-    width: 30%;
-  }
-
-  #toc {
-    top: 15em;
-    margin-left: 490px;
-    max-width: 300px;
-  }
-}
 
 @media (max-width: 760px) {
 
